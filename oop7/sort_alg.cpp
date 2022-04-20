@@ -7,26 +7,9 @@ double Complex::module()
 	return sqrt(pow(this->re, 2) + pow(this->im, 2));
 }
 
-bool complex_compare(Complex a, Complex b)
-{
-	if (b.module() > a.module()) {
-		return 1;
-	}
-	else return 0;
-	
-}
-
 void Complex::printComplex()
 {
 	cout << re << " + " << im << "i";
-}
-
-bool Compare(int a, int b) 
-{
-	if (b > a) {
-		return 1;
-	}
-	else return 0;
 }
 
 vector<Complex> bubble_sort(vector<Complex> s) {
