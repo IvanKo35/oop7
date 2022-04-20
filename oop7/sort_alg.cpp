@@ -29,14 +29,10 @@ bool Compare(int a, int b)
 	else return 0;
 }
 
-bool Compare(Complex& a, Complex& b) {
-	return a.re < b.re;
-}
-
 vector<Complex> bubble_sort(vector<Complex> s) {
 	for (size_t i = 0; i < s.size() - 1; i++) {
 		for (size_t j = i + 1; j < s.size(); j++) {
-			if (complex_compare(s[j], s[i])) {
+			if (s[j] < s[i]) {
 				Complex t = s[j];
 				s[j] = s[i];
 				s[i] = t;
@@ -50,7 +46,7 @@ vector<int> bubble_sort(vector<int> s)
 {
 	for (size_t i = 0; i < s.size()-1; i++) {
 		for (size_t j = i + 1; j < s.size(); j++) {
-			if (Compare(s[j], s[i])) {
+			if (s[j] < s[i]) {
 				int t = s[j];
 				s[j] = s[i];
 				s[i] = t;
@@ -72,4 +68,10 @@ void print_vector(const vector<Complex> s)
 	for (const auto& i : s) {
 		cout << i.re << '+' << i.im << "i ";
 	}
+}
+
+bool operator<(Complex a, Complex b)
+{
+	bool out = a.module() < b.module() ? 1 : 0;
+	return out;
 }

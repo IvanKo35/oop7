@@ -12,12 +12,13 @@ struct Complex {
 	double module();
 
 	void printComplex();
-
 };
 
 bool complex_compare(Complex a, Complex b);
 void print_vector(const vector<int> s);
 void print_vector(const vector<Complex> s);
+
+bool operator < (Complex a, Complex b);
 
 vector<int> bubble_sort(vector<int> s);
 vector<Complex> bubble_sort(vector<Complex> s);
